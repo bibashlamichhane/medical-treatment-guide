@@ -8,7 +8,7 @@
    https://cdqsuqndnqfgcmytostj.supabase.co
 */
 const SUPABASE_URL = 'https://cdqsuqndnqfgcmytostj.supabase.co';
-const SUPABASE_ANON_KEY = 'PASTE_YOUR_SUPABASE_ANON_KEY_HERE';
+const SUPABASE_ANON_KEY = 'sb_publishable_E6RKFIc-3HGwy_qRakQJvg_xmB3U9Q9';
 
 const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 const DB_NAME='treatment-guide-offline';
