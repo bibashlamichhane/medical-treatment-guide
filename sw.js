@@ -1,0 +1,13 @@
+const CACHE='treatment-guide-v1';
+const APP_SHELL=['./','./index.html','./style.css','./app.js','./manifest.webmanifest','./icon.svg'];
+self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(APP_SHELL)).then(()=>self.skipWaiting())));
+self.addEventListener('activate',e=>e.waitUntil(self.clients.claim()));
+self.addEventListener('fetch',e=>{
+  if(e.request.method!=='GET') return;
+  const url=new URL(e.request.url);
+  if(url.origin===location.origin){
+    e.respondWith(caches.match(e.request).then(cached=>cached||fetch(e.request).then(r=>{
+      const copy=r.clone(); caches.open(CACHE).then(c=>c.put(e.request,copy)); return r;
+    }).catch(()=>cached)));
+  }
+});

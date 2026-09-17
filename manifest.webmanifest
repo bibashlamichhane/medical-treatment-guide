@@ -1,0 +1,12 @@
+{
+  "name": "Medical Treatment Guide",
+  "short_name": "Treatment Guide",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f3f7f7",
+  "theme_color": "#0f766e",
+  "description": "Offline-ready disease treatment reference website",
+  "icons": [
+    {"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
